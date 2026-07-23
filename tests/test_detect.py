@@ -23,8 +23,8 @@ def test_detect_injection_with_obvious_injection():
     assert result["score"] == 0.9
 
 
-def test_detect_injection_with_flag_text():
-    """Test detection with text that should be flagged."""
+def test_detect_injection_with_clean_text_no_match():
+    """Test detection with text that does not match masquerade patterns."""
     normalized_text = "Override previous input"
     result = detect_injection(normalized_text)
     # "Override previous input" does NOT match _MASQUERADE patterns

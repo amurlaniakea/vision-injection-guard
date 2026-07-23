@@ -3,28 +3,28 @@
 ## Milestones
 
 ### Milestone 1: Setup and Dependencies
-- [ ] Create project structure (`src/`, `tests/`, `docs/`).
-- [ ] Add `pytesseract` and `tesseract-ocr` to dependencies.
-- [ ] Reuse `scope-lib/adi-shield` for injection detection.
+- [x] Create project structure (`src/`, `tests/`, `docs/`).
+- [x] Add `pytesseract` and `tesseract-ocr` to dependencies.
+- [x] Reuse `scope-lib/adi-shield` for injection detection.
 
 ### Milestone 2: Core OCR and Normalization
-- [ ] Implement OCR extraction using Tesseract.
-- [ ] Implement text normalization (unicode, homoglyphs, spacing).
-- [ ] Write unit tests for OCR and normalization.
+- [x] Implement OCR extraction using Tesseract.
+- [x] Implement text normalization (unicode, homoglyphs, spacing).
+- [x] Write unit tests for OCR and normalization.
 
 ### Milestone 3: Injection Detection
-- [ ] Integrate `scope-lib/adi-shield` detectors.
-- [ ] Implement verdict logic (allow/flag/block).
-- [ ] Write unit tests for detection.
+- [x] Integrate `scope-lib/adi-shield` detectors.
+- [x] Implement verdict logic (allow/block).
+- [x] Write unit tests for detection.
 
 ### Milestone 4: Sensor Interface
-- [ ] Implement standard sensor interface.
-- [ ] Ensure output format matches ecosystem standards.
-- [ ] Write integration tests.
+- [x] Implement standard sensor interface.
+- [x] Ensure output format matches ecosystem standards.
+- [x] Write integration tests.
 
 ### Milestone 5: Testing and Verification
-- [ ] Run all tests (`pytest tests/ -v`).
-- [ ] Check coverage (`coverage report`).
+- [x] Run all tests (`pytest tests/ -v`).
+- [x] Check coverage (`coverage report`).
 - [ ] Integrate with `agent-shield-runtime` for end-to-end test.
 
 ## Tasks
@@ -49,8 +49,8 @@
 ### Task 4: Detection Module
 - Implement `src/vision_injection_guard/detect.py`:
   - Function: `detect_injection(normalized_text: str) -> dict`.
-  - Integrate `scope-lib/adi-shield` detectors.
-  - Return `verdict`, `score`.
+  - Integrate `adi-shield.detector.score_masquerade()` for real detection.
+  - Return `verdict` (allow/block) and `score`.
 - Write tests in `tests/test_detect.py`.
 
 ### Task 5: Sensor Module

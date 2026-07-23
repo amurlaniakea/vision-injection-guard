@@ -17,17 +17,17 @@ Successfully implemented a deterministic, CPU-only sensor for detecting visually
 - Includes comprehensive homoglyph mapping (Cyrillic, Greek, fullwidth characters)
 
 ### 3. Detection Module (`src/vision_injection_guard/detect.py`)
-- Integrates with scope-lib/adi-shield patterns (mock implementation)
-- Detects prompt injection patterns in normalized text
-- Returns verdict (allow/flag/block) and confidence score
-- Case-insensitive pattern matching
+- Integrates with REAL adi-shield.detector.score_masquerade() function
+- Detects directive-like text patterns using adi-shield's _MASQUERADE regex
+- Returns verdict (allow/block) and confidence score (0.0 or 0.9)
+- Case-insensitive pattern matching via adi-shield
 
 ### 4. Sensor Module (`src/vision_injection_guard/sensor.py`)
 - Main entry point for the sensor
 - Orchestrates the full pipeline: OCR → Normalize → Detect
 - Returns standard sensor output format with:
-  - verdict: allow/flag/block
-  - score: confidence score (0.0-1.0)
+  - verdict: allow/block
+  - score: confidence score (0.0 or 0.9)
   - extracted_text: raw OCR output
   - normalized_text: normalized OCR output
 
@@ -65,7 +65,6 @@ print(result)
 - Standard sensor output format matching ecosystem standards
 
 ## Next Steps
-1. Integrate with actual scope-lib/adi-shield for production use
-2. Add more homoglyph mappings as needed
-3. Fine-tune detection patterns and scoring thresholds
-4. Performance benchmarking with real-world images
+1. Performance benchmarking with real-world images
+2. Expand homoglyph mappings based on field data
+3. Tune _MASQUERADE patterns in adi-shield if new attack vectors emerge
