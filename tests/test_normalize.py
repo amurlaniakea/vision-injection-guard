@@ -1,7 +1,6 @@
 """
 Tests for normalization module.
 """
-import pytest
 from vision_injection_guard.normalize import normalize_text, get_homoglyph_map
 
 
@@ -21,9 +20,6 @@ def test_normalize_text_with_unicode():
 
 def test_normalize_text_with_homoglyphs():
     """Test normalization with homoglyphs."""
-    # Test individual homoglyph replacements
-    homoglyph_map = get_homoglyph_map()
-    
     # Test Cyrillic 'o' (U+043E)
     raw_text = "test\u043e"
     normalized = normalize_text(raw_text)
