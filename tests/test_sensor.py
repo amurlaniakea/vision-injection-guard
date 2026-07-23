@@ -1,8 +1,7 @@
 """
 Tests for sensor module.
 """
-import pytest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from vision_injection_guard.sensor import process_image
 
 

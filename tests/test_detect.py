@@ -1,7 +1,6 @@
 """
 Tests for detection module.
 """
-import pytest
 from vision_injection_guard.detect import detect_injection
 
 

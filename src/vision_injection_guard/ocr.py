@@ -20,7 +20,6 @@
 
 import pytesseract
 from PIL import Image
-from typing import Optional
 
 
 def extract_text(image_path: str) -> str:

@@ -1,7 +1,6 @@
 """
 Integration tests for the full vision-injection-guard pipeline.
 """
-import pytest
 from unittest.mock import patch
 from vision_injection_guard import process_image
 
