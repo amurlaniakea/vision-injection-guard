@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "vision-injection-guard"
+version = "0.1.0"
+description = "Deterministic sensor for detecting visually injected text in images"
+authors = ["Pedro Sordo Martínez <amurlaniakea@gmail.com>"]
+license = "AGPL-3.0-or-later"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pytesseract = "^0.3.10"
+Pillow = "^10.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+coverage = "^7.2.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
